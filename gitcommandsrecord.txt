@@ -1,0 +1,906 @@
+@SAROJ MINGW64 /E/Clonegit (master)
+$ git checkout -f
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git diff
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ls
+about.html    ecomdj/  github-git-cheat-sheet.pdf
+contact.html  git.png  monuments.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git rm--cached monuments.html
+git: 'rm--cached' is not a git command. See 'git --help'.
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git rm --cached monuments.html
+rm 'monuments.html'
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    monuments.html
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        monuments.html
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git add -A
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ls
+about.html    ecomdj/  github-git-cheat-sheet.pdf
+contact.html  git.png  monuments.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git rm monuments.html
+rm 'monuments.html'
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ls
+about.html  contact.html  ecomdj/  git.png  github-git-cheat-sheet.pdf
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        deleted:    monuments.html
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git commit -a -m
+error: switch `m' requires a value
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git commit -a -m "Removing Monuments.html"
+[master 81190df] Removing Monuments.html
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 monuments.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ gil log
+bash: gil: command not found
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git log
+commit 81190df4f619a50a3cb62a3b7492308d33fee3cc (HEAD -> master)
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 17:32:51 2020 +0530
+
+    Removing Monuments.html
+
+commit e5c45d32668916538dbe1254c6a1f8ae9d290f83
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 16:34:23 2020 +0530
+
+    Added more files
+
+commit fb67d8132857d94da75acefe38eae975b0352580
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 16:06:09 2020 +0530
+
+    initial commit
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git log -p -2
+commit 81190df4f619a50a3cb62a3b7492308d33fee3cc (HEAD -> master)
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 17:32:51 2020 +0530
+
+    Removing Monuments.html
+
+diff --git a/monuments.html b/monuments.html
+deleted file mode 100644
+index e69de29..0000000
+
+commit e5c45d32668916538dbe1254c6a1f8ae9d290f83
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 16:34:23 2020 +0530
+
+    Added more files
+
+diff --git a/about.html b/about.html
+new file mode 100644
+index 0000000..b18258a
+--- /dev/null
++++ b/about.html
+@@ -0,0 +1,3 @@
++<!!!Doctypehtml!!!>
++<head> </head>
++<body></body>
+\ No newline at end of file
+diff --git a/contact.html b/contact.html
+new file mode 100644
+index 0000000..e69de29
+diff --git a/git.png b/git.png
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git log -p -3
+commit 81190df4f619a50a3cb62a3b7492308d33fee3cc (HEAD -> master)
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 17:32:51 2020 +0530
+
+    Removing Monuments.html
+
+diff --git a/monuments.html b/monuments.html
+deleted file mode 100644
+index e69de29..0000000
+
+commit e5c45d32668916538dbe1254c6a1f8ae9d290f83
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 16:34:23 2020 +0530
+
+    Added more files
+
+diff --git a/about.html b/about.html
+new file mode 100644
+index 0000000..b18258a
+--- /dev/null
++++ b/about.html
+@@ -0,0 +1,3 @@
++<!!!Doctypehtml!!!>
++<head> </head>
++<body></body>
+\ No newline at end of file
+diff --git a/contact.html b/contact.html
+new file mode 100644
+index 0000000..e69de29
+diff --git a/git.png b/git.png
+q
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git log
+commit 81190df4f619a50a3cb62a3b7492308d33fee3cc (HEAD -> master)
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 17:32:51 2020 +0530
+
+    Removing Monuments.html
+
+commit e5c45d32668916538dbe1254c6a1f8ae9d290f83
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 16:34:23 2020 +0530
+
+    Added more files
+
+commit fb67d8132857d94da75acefe38eae975b0352580
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 16:06:09 2020 +0530
+
+    initial commit
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status -s
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status -s
+ M about.html
+ M contact.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git add about.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status-s
+git: 'status-s' is not a git command. See 'git --help'.
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status -s
+M  about.html
+ M contact.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status -s
+MM about.html
+ M contact.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git add -A
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status -s
+M  about.html
+M  contact.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git checkout -f
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status -s
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ touch .gitignore
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ls
+about.html  contact.html  ecomdj/  git.png  github-git-cheat-sheet.pdf
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ls
+about.html  contact.html  ecomdj/  git.png  github-git-cheat-sheet.pdf
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ touch mylogs.log
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git sattus
+git: 'sattus' is not a git command. See 'git --help'.
+
+The most similar command is
+        status
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        mylogs.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        .gitignore
+        mylogs.log
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git add -A
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   mylogs.log
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   mylogs.log
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ls
+about.html    ecomdj/  github-git-cheat-sheet.pdf
+contact.html  git.png  mylogs.log
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git rm --cached mylogs.log
+rm 'mylogs.log'
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mylogs.log
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   .gitignore
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+        mylogs.log
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git add -A
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   mylogs.log
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ls
+about.html    ecomdj/  github-git-cheat-sheet.pdf
+contact.html  git.png  mylogs.log
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   mylogs.log
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git log -p -5
+commit 81190df4f619a50a3cb62a3b7492308d33fee3cc (HEAD -> master)
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 17:32:51 2020 +0530
+
+    Removing Monuments.html
+
+diff --git a/monuments.html b/monuments.html
+deleted file mode 100644
+index e69de29..0000000
+
+commit e5c45d32668916538dbe1254c6a1f8ae9d290f83
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 16:34:23 2020 +0530
+
+    Added more files
+
+diff --git a/about.html b/about.html
+new file mode 100644
+index 0000000..b18258a
+--- /dev/null
++++ b/about.html
+@@ -0,0 +1,3 @@
++<!!!Doctypehtml!!!>
++<head> </head>
++<body></body>
+\ No newline at end of file
+diff --git a/contact.html b/contact.html
+new file mode 100644
+index 0000000..e69de29
+diff --git a/git.png b/git.png
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ q
+bash: q: command not found
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git branch feature1
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   mylogs.log
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git branch
+  feature1
+* master
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git checkout feature1
+Switched to branch 'feature1'
+A       .gitignore
+A       mylogs.log
+
+Saroj@SAROJ MINGW64 /E/Clonegit (feature1)
+$ git status
+On branch feature1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   mylogs.log
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (feature1)
+$ git status
+On branch feature1
+Changes to be committed:
+  (use "git restore --staged <file>..." to unstage)
+        new file:   .gitignore
+        new file:   mylogs.log
+
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (feature1)
+$ gid add -A
+bash: gid: command not found
+
+Saroj@SAROJ MINGW64 /E/Clonegit (feature1)
+$ git commit
+[feature1 e0a4f32] changes made in about.html
+ 2 files changed, 5 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 mylogs.log
+
+Saroj@SAROJ MINGW64 /E/Clonegit (feature1)
+$ git status
+On branch feature1
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Saroj@SAROJ MINGW64 /E/Clonegit (feature1)
+$ git checkout master
+Switched to branch 'master'
+M       about.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git merge feature1
+Updating 81190df..e0a4f32
+Fast-forward
+ .gitignore | 2 ++
+ mylogs.log | 3 +++
+ 2 files changed, 5 insertions(+)
+ create mode 100644 .gitignore
+ create mode 100644 mylogs.log
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git log -p -2
+commit e0a4f321e885770bf21361093291a229c01897c4 (HEAD -> master, feature1)
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 21:16:39 2020 +0530
+
+    changes made in about.html
+
+diff --git a/.gitignore b/.gitignore
+new file mode 100644
+index 0000000..fa72847
+--- /dev/null
++++ b/.gitignore
+@@ -0,0 +1,2 @@
++1 /mylogs.log
++2. *.log
+\ No newline at end of file
+diff --git a/mylogs.log b/mylogs.log
+new file mode 100644
+index 0000000..6fdc590
+--- /dev/null
++++ b/mylogs.log
+@@ -0,0 +1,3 @@
++processing
++downloading
++uploading
+\ No newline at end of file
+
+commit 81190df4f619a50a3cb62a3b7492308d33fee3cc
+Author: AnnuChavan <annuchavhan28@gmail.com>
+Date:   Fri Jan 3 17:32:51 2020 +0530
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git checkout -b flaskIntegration
+Switched to a new branch 'flaskIntegration'
+
+Saroj@SAROJ MINGW64 /E/Clonegit (flaskIntegration)
+$ git branch
+  feature1
+* flaskIntegration
+  master
+
+Saroj@SAROJ MINGW64 /E/Clonegit (flaskIntegration)
+$ git remote add origin https://github.com/AnnuChavhan/EcomRepository.git
+
+Saroj@SAROJ MINGW64 /E/Clonegit (flaskIntegration)
+$ git remote
+origin
+
+Saroj@SAROJ MINGW64 /E/Clonegit (flaskIntegration)
+$ git remote -v
+origin  https://github.com/AnnuChavhan/EcomRepository.git (fetch)
+origin  https://github.com/AnnuChavhan/EcomRepository.git (push)
+
+Saroj@SAROJ MINGW64 /E/Clonegit (flaskIntegration)
+$ git branch
+  feature1
+* flaskIntegration
+  master
+
+Saroj@SAROJ MINGW64 /E/Clonegit (flaskIntegration)
+$ git checkout master
+Switched to branch 'master'
+M       about.html
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git remote add https://github.com/AnnuChavhan/EcomRepository.git
+usage: git remote add [<options>] <name> <url>
+
+    -f, --fetch           fetch the remote branches
+    --tags                import all tags and associated objects when fetching
+                          or do not fetch any tag at all (--no-tags)
+    -t, --track <branch>  branch(es) to track
+    -m, --master <branch>
+                          master branch
+    --mirror[=(push|fetch)]
+                          set up remote as a mirror to push to or fetch from
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git remote
+origin
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git remote add masterorigin https://github.com/AnnuChavhan/EcomRepository.git
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git remote
+masterorigin
+origin
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git rm origin
+fatal: pathspec 'origin' did not match any files
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git config --globl user.email
+error: unknown option `globl'
+usage: git config [<options>]
+
+Config file location
+    --global              use global config file
+    --system              use system config file
+    --local               use repository config file
+    --worktree            use per-worktree config file
+    -f, --file <file>     use given config file
+    --blob <blob-id>      read config from given blob object
+
+Action
+    --get                 get value: name [value-regex]
+    --get-all             get all values: key [value-regex]
+    --get-regexp          get values for regexp: name-regex [value-regex]
+    --get-urlmatch        get value specific for the URL: section[.var] URL
+    --replace-all         replace all matching variables: name value [value_regex]
+    --add                 add a new variable: name value
+    --unset               remove a variable: name [value-regex]
+    --unset-all           remove all matches: name [value-regex]
+    --rename-section      rename section: old-name new-name
+    --remove-section      remove a section: name
+    -l, --list            list all
+    -e, --edit            open an editor
+    --get-color           find the color configured: slot [default]
+    --get-colorbool       find the color setting: slot [stdout-is-tty]
+
+Type
+    -t, --type <>         value is given this type
+    --bool                value is "true" or "false"
+    --int                 value is decimal number
+    --bool-or-int         value is --bool or --int
+    --path                value is a path (file or directory name)
+    --expiry-date         value is an expiry date
+
+Other
+    -z, --null            terminate values with NUL byte
+    --name-only           show variable names only
+    --includes            respect include directives on lookup
+    --show-origin         show origin of config (file, standard input, blob, command line)
+    --default <value>     with --get, use default value when missing entry
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git config --global user.email
+annuchavhan28@gmail.com
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ^C
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ssh-keygen -t rsa -b 4096 -C "annuchavhan28@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Saroj/.ssh/id_rsa): Sshkey
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Saving key "Sshkey\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C\033[C" failed: File name too long
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ eval $(ssh-agent -s)
+Agent pid 959
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ssh-add ~/.ssh/id_rsa
+/c/Users/Saroj/.ssh/id_rsa: No such file or directory
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ssh-add ~/.ssh/id_rsaid_rsa
+/c/Users/Saroj/.ssh/id_rsaid_rsa: No such file or directory
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ssh-add ~/.ssh/Sshkey
+/c/Users/Saroj/.ssh/Sshkey: No such file or directory
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ $ ssh-keygen -t rsa -b 4096 -C "annuchavhan28@gmail.com"
+bash: $: command not found
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ $ ssh-keygen -t rsa -b 4096 -C "annuchavhan28@gmail.com"
+bash: $: command not found
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ssh-keygen -t rsa -b 4096 -C "annuchavhan28@gmail.com"
+Generating public/private rsa key pair.
+Enter file in which to save the key (/c/Users/Saroj/.ssh/id_rsa):
+Created directory '/c/Users/Saroj/.ssh'.
+Enter passphrase (empty for no passphrase):
+Enter same passphrase again:
+Your identification has been saved in /c/Users/Saroj/.ssh/id_rsa.
+Your public key has been saved in /c/Users/Saroj/.ssh/id_rsa.pub.
+The key fingerprint is:
+SHA256:MgT0aN+CJ+r+6Ip7gFfQNETM8LnDx9KIOs7mbUihdgQ annuchavhan28@gmail.com
+The key's randomart image is:
++---[RSA 4096]----+
+|  .XB            |
+| E..+*           |
+|  ..= o          |
+| . =.O .         |
+|o +.O X S        |
+|++.o * +         |
+|=o+              |
+|+=oo             |
+|*X*o.            |
++----[SHA256]-----+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ eval $(ssh-agent -s)
+Agent pid 988
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ssh-add ~/.ssh/id_rsa
+Identity added: /c/Users/Saroj/.ssh/id_rsa (annuchavhan28@gmail.com)
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ cat ~/.ssh/id_rsa
+-----BEGIN OPENSSH PRIVATE KEY-----
+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
+-----END OPENSSH PRIVATE KEY-----
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git remote
+masterorigin
+origin
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git push -u masterorigin master
+To https://github.com/AnnuChavhan/EcomRepository.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/AnnuChavhan/EcomRepository.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git push -u origin master
+To https://github.com/AnnuChavhan/EcomRepository.git
+ ! [rejected]        master -> master (fetch first)
+error: failed to push some refs to 'https://github.com/AnnuChavhan/EcomRepository.git'
+hint: Updates were rejected because the remote contains work that you do
+hint: not have locally. This is usually caused by another repository pushing
+hint: to the same ref. You may want to first integrate the remote changes
+hint: (e.g., 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ^C
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git fetch masterorigin master:tmp
+warning: no common commits
+remote: Enumerating objects: 3, done.
+remote: Counting objects: 100% (3/3), done.
+remote: Compressing objects: 100% (2/2), done.
+remote: Total 3 (delta 0), reused 0 (delta 0), pack-reused 0
+Unpacking objects: 100% (3/3), done.
+From https://github.com/AnnuChavhan/EcomRepository
+ * [new branch]      master     -> tmp
+ * [new branch]      master     -> masterorigin/master
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git rebase tmp
+error: cannot rebase: You have unstaged changes.
+error: Please commit or stash them.
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git push masterorigin HEAD:master
+To https://github.com/AnnuChavhan/EcomRepository.git
+ ! [rejected]        HEAD -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/AnnuChavhan/EcomRepository.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ gitstatus
+bash: gitstatus: command not found
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   about.html
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git commit -a -m
+error: switch `m' requires a value
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git commit -a -m"Trying to solve issue"
+[master 93d04e7] Trying to solve issue
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git push -u masterorigin master
+To https://github.com/AnnuChavhan/EcomRepository.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/AnnuChavhan/EcomRepository.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git fetch
+From https://github.com/AnnuChavhan/EcomRepository
+ * [new branch]      master     -> origin/master
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> master
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git push
+fatal: The current branch master has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin master
+
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git push -u masterorigin master
+To https://github.com/AnnuChavhan/EcomRepository.git
+ ! [rejected]        master -> master (non-fast-forward)
+error: failed to push some refs to 'https://github.com/AnnuChavhan/EcomRepository.git'
+hint: Updates were rejected because the tip of your current branch is behind
+hint: its remote counterpart. Integrate the remote changes (e.g.
+hint: 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git status
+On branch master
+nothing to commit, working tree clean
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ git branch
+  feature1
+  flaskIntegration
+* master
+  tmp
+
+Saroj@SAROJ MINGW64 /E/Clonegit (master)
+$ ssh-add ~/.ssh/Sshkey

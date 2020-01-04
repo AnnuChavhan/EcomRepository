@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CustomerInfo</title>
+</head>
+<body>
+    <h3>{{note}}</h3>
+
+    <br>
+
+    <form action="http://localhost:8000/customers/persist/" method="post">
+        {% csrf_token %}
+        Cust ID :     <input type="text" name="id" value="{{cust.id}}"> <br><br>
+        Cust Name :     <input type="text" name="name" value="{{cust.name}}"> <br><br>
+        Cust Email :     <input type="text" name="email" value="{{cust.email}}"> <br><br>
+        Cust Age :     <input type="text" name="age" value="{{cust.age}}"> <br><br>
+        Account :  <select name="account">
+                <option value="0">--Select--</option>
+            {% for acc in accounts %}
+                    <option value="{{acc.id}}">{{acc.type}} - {{acc.id}}</option>
+            {% endfor %}
+
+    </select><br><br>
+        <input type="submit">
+    </form>
+
+    <br>
+
+    <table>
+            <thead>
+                <th>Cust ID </th>
+            <th>Cust Name </th>
+            <th>Cust Email </th>
+            <th>Cust Age </th>
+            <th>Cust Action </th>
+            </thead>
+    {% for cust in customers %}
+            <tbody>
+                <td>{{cust.id}}</td>
+            <td>{{cust.name}}</td>
+            <td>{{cust.email}}</td>
+            <td>{{cust.age}}</td>
+                <td>
+               <a href="http://localhost:8000/customers/edit/{{cust.id}}">EDIT</a>
+                    &nbsp;&nbsp;
+               <a href="http://localhost:8000/customers/delete/{{cust.id}}">DELETE</a>
+
+                </td>
+
+
+            </tbody>
+        {% endfor %}
+
+    </table>
+
+</body>
+</html>
